@@ -64,10 +64,15 @@ function logMaxPossibleScore() {
 }
 
 app.post('/calculate-score', (req, res) => {
-  logMaxPossibleScore(); // Log khi có request
-  const userInput = req.body;
-  const result = calculateScoreFromSelection(userInput);
-  res.json(result);
+    try {
+        logMaxPossibleScore(); // Log khi có request
+        const userInput = req.body;
+        const result = calculateScoreFromSelection(userInput);
+        res.json(result);
+    } catch (error) {
+        console.log(error)
+    }
+  
 });
 
 const PORT = 1000;
