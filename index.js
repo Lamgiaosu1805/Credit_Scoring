@@ -17,32 +17,34 @@ const weights = {
 const scoringData = JSON.parse(fs.readFileSync('./credit_scoring_corrected.json', 'utf8'));
 // Tính điểm từ lựa chọn người dùng
 function calculateScoreFromSelection(userInput) {
-  let totalScore = 0;
-  console.log("\n====== Chi tiết điểm từng mục ======");
+    let totalScore = 0;
+    console.log("\n====== Chi tiết điểm từng mục ======");
+    var error = []
+    for (const [category, subcriteria] of Object.entries(userInput)) {
+        const categoryWeight = weights[category] || 0;
+        let categoryScore = 0;
 
-  for (const [category, subcriteria] of Object.entries(userInput)) {
-    const categoryWeight = weights[category] || 0;
-    let categoryScore = 0;
+        for (const [criterion, choice] of Object.entries(subcriteria)) {
+        const score = scoringData[category]?.[criterion]?.[choice];
+        if (typeof score === 'number') {
+            const weightedScore = score * categoryWeight;
+            categoryScore += weightedScore;
+            console.log(`${category} > ${criterion} > ${choice} = ${score} * ${categoryWeight} = ${weightedScore}`);
+        } else {
+            console.warn(`Không tìm thấy điểm cho: ${category} > ${criterion} > ${choice}`);
+            error.push(`Không tìm thấy điểm cho: ${category} > ${criterion} > ${choice}`)
+        }
+        }
 
-    for (const [criterion, choice] of Object.entries(subcriteria)) {
-      const score = scoringData[category]?.[criterion]?.[choice];
-      if (typeof score === 'number') {
-        const weightedScore = score * categoryWeight;
-        categoryScore += weightedScore;
-        console.log(`${category} > ${criterion} > ${choice} = ${score} * ${categoryWeight} = ${weightedScore}`);
-      } else {
-        console.warn(`Không tìm thấy điểm cho: ${category} > ${criterion} > ${choice}`);
-      }
-    }
-
-    console.log(`→ Tổng điểm "${category}" (có trọng số): ${categoryScore.toFixed(2)}\n`);
-    totalScore += categoryScore;
+        console.log(`→ Tổng điểm "${category}" (có trọng số): ${categoryScore.toFixed(2)}\n`);
+        totalScore += categoryScore;
   }
 
   console.log("➡️ Tổng điểm cuối cùng (có trọng số):", totalScore.toFixed(2));
   return {
-    totalScore: parseFloat(totalScore.toFixed(2)),
-    rating: Utils.getRank(totalScore)
+    totalScore: error.length > 0 ? -1 : parseFloat(totalScore.toFixed(2)),
+    rating: Utils.getRank(totalScore),
+    error: error
   };
 }
 
@@ -74,7 +76,7 @@ app.post('/calculate-score', (req, res) => {
   
 });
 
-const PORT = 5000;
+const PORT = 3005;
 app.listen(PORT, () => {
   console.log(`✅ Credit scoring server running on port ${PORT}`);
 });
