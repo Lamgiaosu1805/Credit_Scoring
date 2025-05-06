@@ -4,7 +4,7 @@ app.use(express.json());
 
 const fs = require('fs');
 const Utils = require('./src/Utils');
-const scoringData = JSON.parse(fs.readFileSync('./credit_scoring_corrected.json', 'utf8'));
+
 
 // Trọng số cho từng tiêu chí lớn
 const weights = {
@@ -17,6 +17,7 @@ const weights = {
 
 // Tính điểm từ lựa chọn người dùng
 function calculateScoreFromSelection(userInput) {
+    const scoringData = JSON.parse(fs.readFileSync('./credit_scoring_corrected.json', 'utf8'));
   let totalScore = 0;
 
   console.log("\n====== Chi tiết điểm từng mục ======");
