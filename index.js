@@ -3,6 +3,7 @@ const app = express();
 app.use(express.json());
 
 const fs = require('fs');
+const Utils = require('./src/Utils');
 const scoringData = JSON.parse(fs.readFileSync('./credit_scoring_corrected.json', 'utf8'));
 
 // Trọng số cho từng tiêu chí lớn
@@ -41,7 +42,8 @@ function calculateScoreFromSelection(userInput) {
 
   console.log("➡️ Tổng điểm cuối cùng (có trọng số):", totalScore.toFixed(2));
   return {
-    totalScore: parseFloat(totalScore.toFixed(2))
+    totalScore: parseFloat(totalScore.toFixed(2)),
+    rating: Utils.getRank(totalScore)
   };
 }
 
