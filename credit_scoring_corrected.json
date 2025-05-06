@@ -24,22 +24,22 @@
     },
     "Tình hình quan hệ với VNFITE": {
       "Từ 3 năm trở lên": 100,
-      "Từ 23 năm": 80,
-      "Từ 12 năm": 60,
+      "Từ 2-3 năm": 80,
+      "Từ 1-2 năm": 60,
       "Dưới 1 năm": 40,
       "Chưa có quan hệ": 20
     }
   },
   "Capacity": {
     "Tuổi": {
-      "Từ 30  50 tuổi": 100,
-      "Từ 25  29 tuổi hoặc 51  55 tuổi": 80,
-      "Từ 56  60 tuổi": 60,
-      "Từ 20 24 tuổi": 40,
-      "Từ 61 tuổi trở lên hoặc 1819 tuổi": 20
+      "Từ 30-50 tuổi": 100,
+      "Từ 25-29 tuổi hoặc 51-55 tuổi": 80,
+      "Từ 56-60 tuổi": 60,
+      "Từ 20-24 tuổi": 40,
+      "Từ 61 tuổi trở lên hoặc 18-19 tuổi": 20
     },
     "Trình độ học vấn": {
-      "Đại học/ trên đại học": 100,
+      "Đại học/trên đại học": 100,
       "Cao đẳng": 80,
       "Trung cấp": 60,
       "Dưới trung cấp": 40
@@ -58,18 +58,18 @@
       "Cán bộ quản lý": 100,
       "Cán bộ cấp chuyên viên": 80,
       "Lao động được đào tạo nghề/công nhân hoặc kinh doanh tự do": 60,
-      "Lao động thời vụ/thất nghiệp/ nghỉ hưu": 40
+      "Lao động thời vụ/thất nghiệp/nghỉ hưu": 40
     },
     "Thâm niên làm việc trong lĩnh vực chuyên môn hiện tại": {
       "Từ 5 năm trở lên": 100,
-      "Từ 45 năm": 80,
-      "Từ 34 năm": 60,
-      "Từ 13 năm": 40,
+      "Từ 4-5 năm": 80,
+      "Từ 3-4 năm": 60,
+      "Từ 1-3 năm": 40,
       "Dưới 1 năm": 20
     },
     "Thời gian công tác tại nơi làm việc": {
       "Từ 3 năm trở lên": 100,
-      "Từ 13 năm": 80,
+      "Từ 1-3 năm": 80,
       "Dưới 1 năm": 40
     }
   },
@@ -100,14 +100,14 @@
     },
     "Tổng thu nhập hàng tháng của người gọi vốn": {
       "Cao (trên 50 trđ)": 100,
-      "Khá (từ 2550 trđ)": 80,
-      "Trung bình (từ 10 25 trđ)": 60,
+      "Khá (từ 25-50 trđ)": 80,
+      "Trung bình (từ 10-25 trđ)": 60,
       "Thấp (dưới 10 trđ)": 40
     },
     "Mức thu nhập ròng ổn định hàng tháng của người gọi vốn": {
       "Cao (trên 30 trđ)": 100,
-      "Khá (từ 1530 trđ)": 80,
-      "Trung bình (từ 05 15 trđ)": 60,
+      "Khá (từ 15-30 trđ)": 80,
+      "Trung bình (từ 05-15 trđ)": 60,
       "Thấp (dưới 05 trđ)": 40
     },
     "Tỷ lệ giữa thu nhập ròng ổn định và sổ tiền phải trả trong kỳ theo kế hoạch trả nợ": {
@@ -120,8 +120,8 @@
   "Collateral": {
     "Giá trị hợp đồng bảo hiểm nhân thọ (nếu có) so với dư nợ": {
       "Trên 100%": 100,
-      "Từ 50%100%": 80,
-      "Từ 30%50%": 60,
+      "Từ 50%-100%": 80,
+      "Từ 30%-50%": 60,
       "Dưới 30%": 40,
       "Không có": 20
     },
@@ -138,14 +138,14 @@
     },
     "Thời gian lưu trú trên địa bàn hiện tại": {
       "Từ 7 năm trở lên": 100,
-      "Từ 57 năm": 80,
-      "Từ 35 năm": 60,
-      "Từ 13 năm": 40,
+      "Từ 5-7 năm": 80,
+      "Từ 3-5 năm": 60,
+      "Từ 1-3 năm": 40,
       "Dưới 1 năm": 20
     },
     "Sở hữu ô tô": {
       "Xe cao cấp (giá trị trên 1 tỷ)": 80,
-      "Xe phổ thông (giá trị từ 500 trđ  dưới 1 tỷ)": 60,
+      "Xe phổ thông (giá trị từ 500 trđ dưới 1 tỷ)": 60,
       "Xe phổ thông (giá trị dưới 500 trđ)": 40,
       "Không sở hữu xe ô tô": 20
     }
@@ -165,9 +165,9 @@
     },
     "Số tiền điện thoại hàng tháng": {
       "Trên 1.000.000 VNĐ": 100,
-      "Từ 500.000  1.000.000 VNĐ": 80,
-      "Từ 300.000  500.000 VNĐ": 60,
-      "Từ 100.000  300.000 VNĐ": 40,
+      "Từ 500.000-1.000.000 VNĐ": 80,
+      "Từ 300.000-500.000 VNĐ": 60,
+      "Từ 100.000-300.000 VNĐ": 40,
       "Dưới 100.000 VNĐ": 20
     },
     "Số điện thoại hay gọi, mục đích": {
