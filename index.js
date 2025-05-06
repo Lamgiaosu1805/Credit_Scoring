@@ -74,7 +74,7 @@ app.post('/calculate-score', (req, res) => {
   
 });
 
-const PORT = 1000;
+const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`✅ Credit scoring server running on port ${PORT}`);
 });
