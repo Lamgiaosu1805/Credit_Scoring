@@ -14,12 +14,10 @@ const weights = {
   "Collateral": 0.36,
   "Conditions": 0.25
 };
-
+const scoringData = JSON.parse(fs.readFileSync('./credit_scoring_corrected.json', 'utf8'));
 // Tính điểm từ lựa chọn người dùng
 function calculateScoreFromSelection(userInput) {
-    const scoringData = JSON.parse(fs.readFileSync('./credit_scoring_corrected.json', 'utf8'));
   let totalScore = 0;
-
   console.log("\n====== Chi tiết điểm từng mục ======");
 
   for (const [category, subcriteria] of Object.entries(userInput)) {
@@ -76,7 +74,7 @@ app.post('/calculate-score', (req, res) => {
   
 });
 
-const PORT = 5000;
+const PORT = 1000;
 app.listen(PORT, () => {
   console.log(`✅ Credit scoring server running on port ${PORT}`);
 });
