@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const sequelize = require('./src/db')
+// const sequelize = require('./src/db')
 app.use(express.json());
 
 const fs = require('fs');
@@ -8,9 +8,9 @@ const Utils = require('./src/Utils');
 const User = require('./src/models/User');
 const KhoanDauTu = require('./src/models/KhoanDauTu');
 
-sequelize.sync().then(() => {
-  console.log('📦 DB đã sync');
-});
+// sequelize.sync().then(() => {
+//   console.log('📦 DB đã sync');
+// });
 // Trọng số cho từng tiêu chí lớn
 const weights = {
   "Character": 0.38,
